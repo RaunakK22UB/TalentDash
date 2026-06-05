@@ -1,9 +1,8 @@
-# TalentDash Backend — Programmatic Compensation Intelligence Engine
+# TalentDash Backend 
 
 > High-integrity synchronous salary ingestion pipeline, automated string normalization engines, and multi-path indexed database API nodes.
 
 ---
-
 ### 🌐 Live Production API Artifacts
 ```text
 [LIVE PRODUCTION API URL] : https://talent-dash-backend.vercel.app (or custom deployment domain)
