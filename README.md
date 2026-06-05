@@ -56,14 +56,8 @@ touch .env
 ```
 Copy and paste the configuration block below into the `.env` file, substituting it with your Neon database credentials:
 ```env
-# Serverless PostgreSQL Pooled Connection (Used for application runtimes)
-DATABASE_URL="postgres://alex:mock_password@ep-cool-shadow-a5xyz.us-east-2.aws.neon.tech/talentdash?sslmode=require&pgbouncer=true"
-
-# Serverless PostgreSQL Direct Connection (Required for running Prisma Migrations)
-DIRECT_URL="postgres://alex:mock_password@ep-cool-shadow-a5xyz.us-east-2.aws.neon.tech/talentdash?sslmode=require"
-
-# System Deployment Environment Target Mode
-NODE_ENV="development"
+# Serverless PostgreSQL Connection String
+DATABASE_URL="postgresql://user:password@ep-host-pooler.region.aws.neon.tech/neondb?sslmode=require"
 ```
 
 ### Step 3: Install Project Dependencies
