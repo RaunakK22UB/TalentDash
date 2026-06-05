@@ -1,0 +1,72 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum LevelStandardized {
+  L3
+  L4
+  L5
+  L6
+  SDE_I
+  SDE_II
+  SDE_III
+  STAFF
+  PRINCIPAL
+  IC4
+  IC5
+}
+
+enum Currency {
+  INR
+  USD
+  GBP
+  EUR
+}
+
+enum TransportSource {
+  CONTRIBUTOR
+  SCRAPED
+  AI_INFERRED
+}
+
+model Company {
+  id              String   @id @default(uuid()) @db.Uuid
+  name            String
+  slug            String   @unique
+  normalized_name String   @unique
+  industry        String
+  headquarters    String
+  founded_year    Int?
+  headcount_range String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+  salaries        Salary[]
+}
+
+model Salary {
+  id                 String            @id @default(uuid()) @db.Uuid
+  company_id         String            @db.Uuid
+  company            Company           @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  role               String
+  level              LevelStandardized
+  location           String
+  currency           Currency
+  experience_years   Int
+  base_salary        BigInt
+  bonus              BigInt            @default(0)
+  stock              BigInt            @default(0)
+  total_compensation BigInt
+  source             TransportSource
+  confidence_score   Decimal           @db.Decimal(3, 2)
+  is_verified        Boolean           @default(false)
+  submitted_at       DateTime          @default(now())
+
+  @@index([company_id, level, location])
+  @@index([total_compensation])
+  @@index([submitted_at])
+  @@index([location, level])
+}
