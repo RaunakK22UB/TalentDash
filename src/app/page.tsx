@@ -22,10 +22,10 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-brand-background px-6 py-12 md:px-12 flex flex-col items-center font-sans antialiased text-brand-body">
-      
+
       {/* Container holding the dashboard */}
       <div className="w-full max-w-5xl space-y-10">
-        
+
         {/* ======================================================
             HEADER SECTION (Centered, Extra Large Title)
            ====================================================== */}
@@ -33,7 +33,7 @@ export default async function Home() {
           {/* Database Live Connectivity Banner */}
           <div className="flex items-center space-x-3 bg-brand-surface border border-brand-border px-4 py-2 rounded-full shadow-sm">
             <span className="w-2.5 h-2.5 rounded-full bg-brand-success animate-pulse"></span>
-            <span className="text-xs font-bold text-brand-deep uppercase tracking-wider">Database Node Online — Neon Serverless PostgreSQL</span>
+            <span className="text-xs font-bold text-brand-deep uppercase tracking-wider">Database Is Online — Neon Serverless PostgreSQL</span>
           </div>
 
           <div className="space-y-2">
@@ -41,7 +41,7 @@ export default async function Home() {
             <h1 className="text-5xl md:text-6xl font-black tracking-tight text-brand-deep leading-tight">
               Backend Testing Endpoints
             </h1>
-            <p className="text-sm font-semibold text-brand-muted mt-2">
+            <p className="text-sm text-red-700 font-bold  mt-2">
               Note: Use Postman, cURL, or a REST client to test the POST payload validation and deduplication endpoints.
             </p>
           </div>
@@ -83,9 +83,9 @@ export default async function Home() {
            ====================================================== */}
         <section className="space-y-6">
           <h2 className="text-lg font-bold text-brand-deep uppercase tracking-wider">Verification Suite</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
+
             {/* Card 1: Seed Check */}
             <div className="bg-brand-surface border border-brand-border p-6 rounded-2xl flex flex-col justify-between space-y-4 hover:shadow-md transition">
               <div className="space-y-3">
@@ -98,9 +98,9 @@ export default async function Home() {
                   Validates live Neon PostgreSQL connection string pools, seeding integrity, and structural pagination metadata formatting.
                 </p>
               </div>
-              <Link 
-                href="/api/salaries?limit=5" 
-                target="_blank" 
+              <Link
+                href="/api/salaries?limit=5"
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -119,9 +119,9 @@ export default async function Home() {
                   Evaluates case-insensitive token lookups, standard enums, and multi-path composite index sweeps functioning simultaneously.
                 </p>
               </div>
-              <Link 
-                href="/api/salaries?company=google&level=L4&currency=INR" 
-                target="_blank" 
+              <Link
+                href="/api/salaries?company=google&level=L4&currency=INR"
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -140,9 +140,9 @@ export default async function Home() {
                   Asserts backend interceptor middleware, force-capping unbounded payloads over 100 entries to `limit: 100`.
                 </p>
               </div>
-              <Link 
-                href="/api/salaries?limit=10000" 
-                target="_blank" 
+              <Link
+                href="/api/salaries?limit=10000"
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -161,9 +161,9 @@ export default async function Home() {
                   Verifies server-side true mathematical median computation and frequency distribution counters mapped to unique slugs.
                 </p>
               </div>
-              <Link 
-                href="/api/companies/google" 
-                target="_blank" 
+              <Link
+                href="/api/companies/google"
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -182,9 +182,9 @@ export default async function Home() {
                   Validates standard 404 response structural uniformity for unknown company slugs.
                 </p>
               </div>
-              <Link 
-                href="/api/companies/nonexistent-slug" 
-                target="_blank" 
+              <Link
+                href="/api/companies/nonexistent-slug"
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -203,9 +203,9 @@ export default async function Home() {
                   Compares two active salary records side-by-side to compute absolute numerical deltas. Uses real database IDs.
                 </p>
               </div>
-              <Link 
-                href={compareUrl} 
-                target="_blank" 
+              <Link
+                href={compareUrl}
+                target="_blank"
                 className="w-full text-center py-2.5 bg-brand-background hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition text-brand-deep border border-brand-border hover:border-brand-primary block"
               >
                 Test Endpoint →
@@ -225,7 +225,7 @@ export default async function Home() {
             </svg>
             <h3 className="font-extrabold text-sm tracking-tight uppercase tracking-wider">Post Ingestion Endpoint (POST /api/ingest-salary)</h3>
           </div>
-          
+
           <p className="text-sm text-brand-body leading-relaxed">
             I suggest running a <code className="bg-brand-background px-1.5 py-0.5 rounded font-mono text-xs">POST</code> request in <strong className="text-brand-primary">Postman</strong> or via <strong className="text-brand-primary">cURL</strong> to test validation rules, 48h deduplication, and 201/400/409 error responses against:
             <br />
