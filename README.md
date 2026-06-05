@@ -5,7 +5,7 @@
 ---
 ### 🌐 Live Production API Artifacts
 ```text
-[LIVE PRODUCTION API URL] : https://talent-dash-backend.vercel.app (or custom deployment domain)
+[LIVE PRODUCTION API URL] : https://talentdash-p51m.onrender.com 
 [CORE SUITE BUILD STATUS] : Next.js 15 App Router | TypeScript Strict | Prisma ORM | Neon Serverless PostgreSQL
 ```
 
