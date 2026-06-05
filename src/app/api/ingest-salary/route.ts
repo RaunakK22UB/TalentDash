@@ -66,11 +66,11 @@ const ingestSchema = z.object({
   headcount_range: z.string().trim().nullable().optional(),
   role: z.string().trim().min(1, 'Role is required'),
   level: z.nativeEnum(LevelStandardized, {
-    errorMap: () => ({ message: 'Invalid level. Allowed levels: L3, L4, L5, L6, SDE_I, SDE_II, SDE_III, STAFF, PRINCIPAL, IC4, IC5' })
+    message: 'Invalid level. Allowed levels: L3, L4, L5, L6, SDE_I, SDE_II, SDE_III, STAFF, PRINCIPAL, IC4, IC5'
   }),
   location: locationSchema,
   currency: z.nativeEnum(Currency, {
-    errorMap: () => ({ message: 'Invalid currency. Allowed currencies: INR, USD, GBP, EUR' })
+    message: 'Invalid currency. Allowed currencies: INR, USD, GBP, EUR'
   }),
   experience_years: z.number()
     .int('Experience years must be an integer')
@@ -80,7 +80,7 @@ const ingestSchema = z.object({
   bonus: bonusSchema,
   stock: stockSchema,
   source: z.nativeEnum(TransportSource, {
-    errorMap: () => ({ message: 'Invalid transport source. Allowed sources: CONTRIBUTOR, SCRAPED, AI_INFERRED' })
+    message: 'Invalid transport source. Allowed sources: CONTRIBUTOR, SCRAPED, AI_INFERRED'
   }),
   confidence_score: z.number()
     .min(0.0, 'Confidence score must be between 0.00 and 1.00')
